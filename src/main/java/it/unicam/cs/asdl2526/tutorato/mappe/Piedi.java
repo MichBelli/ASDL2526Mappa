@@ -21,8 +21,9 @@ public class Piedi implements Mezzo {
      */
     @Override
     public boolean possibile(Fermata partenza, Fermata arrivo) {
-        // TODO: IMPLEMENTARE
-        return false;
+        if (partenza == null || arrivo == null)
+            throw new NullPointerException("Nessuna delle due fermate può essere null");
+        return true;
     }
 
     /**
@@ -34,8 +35,10 @@ public class Piedi implements Mezzo {
      */
     @Override
     public int tempoImpiegato(Fermata partenza, Fermata arrivo) {
-        // TODO: IMPLEMENTARE
-        return 0;
+        if (partenza == null || arrivo == null)
+            throw new NullPointerException("Nessuna delle due fermate può essere null");
+        // Se nessuno delle due fermate è null, sicuramente il tragitto è possibile
+        return (int) POSIZIONI_AL_MINUTO * partenza.compareToInDistanza(arrivo);
     }
 
 }

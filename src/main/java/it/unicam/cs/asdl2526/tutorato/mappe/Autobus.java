@@ -19,20 +19,21 @@ public class Autobus implements Mezzo {
      * @throws IllegalArgumentException Se le due fermate sono uguali oppure non asfaltate.
      */
     public Autobus(Fermata partenza, Fermata arrivo) {
-        this.arrivo = null;
-        this.partenza = null;
-        //TODO: IMPLEMENTARE
+        if (partenza == null || arrivo == null)
+            throw new NullPointerException("Nessuna delle due fermate può essere null");
+        if(partenza.equals(arrivo))
+            throw new IllegalArgumentException("Le due fermate non possono essere uguali");
+        this.arrivo = arrivo;
+        this.partenza = partenza;
     }
 
     @Override
     public boolean possibile(Fermata partenza, Fermata arrivo) {
-        //TODO: IMPLEMENTARE
-        return false;
+        return this.partenza.equals(partenza) && this.arrivo.equals(arrivo);
     }
 
     @Override
     public int tempoImpiegato(Fermata partenza, Fermata arrivo) {
-        //TODO: IMPLEMENTARE
-        return 0;
+        return MINUTI_PER_POSIZIONE * partenza.compareToInDistanza(arrivo);
     }
 }
