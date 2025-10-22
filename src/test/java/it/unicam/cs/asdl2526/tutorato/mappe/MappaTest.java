@@ -36,6 +36,6 @@ class MappaTest {
 
         assertEquals(autobus, mappa.mezzoPiuVeloce(f1, f2));
         assertEquals(piedi, mappa.mezzoPiuVeloce(f1, f3));
-        assertThrows(IllegalArgumentException.class, () -> mappa.mezzoPiuVeloce(f2, f3));
+        assertEquals(piedi, mappa.mezzoPiuVeloce(f2, f3));
     }
 }

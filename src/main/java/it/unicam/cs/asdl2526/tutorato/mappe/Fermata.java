@@ -17,15 +17,18 @@ public class Fermata implements ComparabileInDistanza<Fermata> {
      * @throws NullPointerException Se il nome è null
      */
     Fermata(int posizione, String nome) {
-        this.posizione = 0;
-        this.nome = "";
-        // TODO implementare
+        if (nome == null) {
+            throw new NullPointerException("Il nome non può essere null");
+        }
+        this.posizione = posizione;
+        this.nome = nome;
     }
 
     @Override
     public int compareToInDistanza(Fermata other) {
-        //TODO: IMPLEMENTARE
-        return 0;
+        int max = Math.max(this.posizione, other.posizione);
+        int min = Math.min(this.posizione, other.posizione);
+        return max - min;
     }
 
     public String getNome() {
@@ -44,14 +47,21 @@ public class Fermata implements ComparabileInDistanza<Fermata> {
      */
     @Override
     public boolean equals(Object other) {
-        //TODO: IMPLEMETARE
-        return true;
+        if(this == other)
+            return true;
+        if(!(other instanceof Fermata))
+            return false;
+        Fermata o = (Fermata) other;
+        return this.posizione == o.posizione;
     }
 
 
     @Override
     public int hashCode() {
-        //TODO: IMPLEMENTARE
-        return -1;
+        final int prime = 31;
+        int hash = 17;
+        hash = hash * prime + nome.hashCode();
+        hash = hash * prime + Integer.hashCode(posizione);
+        return hash;
     }
 }

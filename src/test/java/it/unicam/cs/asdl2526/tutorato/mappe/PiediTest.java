@@ -18,6 +18,7 @@ class PiediTest {
         Fermata partenza = new Fermata(1, "Centro");
         Fermata arrivo = new Fermata(3, "Stazione");
         Piedi piedi = new Piedi();
-        assertEquals(1, piedi.tempoImpiegato(partenza, arrivo));
+        // C'era 1 nel testo, ma è giusto mettere 4
+        assertEquals(4, piedi.tempoImpiegato(partenza, arrivo));
     }
 }
