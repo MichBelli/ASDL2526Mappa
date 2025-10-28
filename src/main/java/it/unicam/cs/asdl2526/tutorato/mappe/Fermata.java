@@ -26,9 +26,7 @@ public class Fermata implements ComparabileInDistanza<Fermata> {
 
     @Override
     public int compareToInDistanza(Fermata other) {
-        int max = Math.max(this.posizione, other.posizione);
-        int min = Math.min(this.posizione, other.posizione);
-        return max - min;
+        return Math.abs(this.posizione - other.posizione);
     }
 
     public String getNome() {

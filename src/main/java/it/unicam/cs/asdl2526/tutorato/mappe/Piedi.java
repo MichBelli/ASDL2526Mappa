@@ -10,7 +10,7 @@ public class Piedi implements Mezzo {
     /**
      * Velocità media a piedi in posizioni per minuto.
      */
-    public static final double POSIZIONI_AL_MINUTO = 2;
+    public static final double MINUTI_PER_POSIZIONE = 2;
 
     /**
      * A piedi è sempre possibile spostarsi tra due fermate.
@@ -38,7 +38,7 @@ public class Piedi implements Mezzo {
         if (partenza == null || arrivo == null)
             throw new NullPointerException("Nessuna delle due fermate può essere null");
         // Se nessuno delle due fermate è null, sicuramente il tragitto è possibile
-        return (int) POSIZIONI_AL_MINUTO * partenza.compareToInDistanza(arrivo);
+        return (int) MINUTI_PER_POSIZIONE * partenza.compareToInDistanza(arrivo);
     }
 
 }
