@@ -5,7 +5,7 @@ package it.unicam.cs.asdl2526.tutorato.mappe;
  * Essendo la LineaCity la città ci basta sapere la posizione senza coordinate.
  * @author Federico Di Petta
  */
-public class Fermata implements ComparabileInDistanza<Fermata> {
+public class Fermata implements ComparabileInDistanza<Fermata>, Comparable<Fermata> {
 
     public final int posizione;
     public final String nome;
@@ -27,6 +27,12 @@ public class Fermata implements ComparabileInDistanza<Fermata> {
     @Override
     public int compareToInDistanza(Fermata other) {
         return Math.abs(this.posizione - other.posizione);
+    }
+
+    @Override
+    public int compareTo(Fermata other) {
+        //TODO: implementare correttamente il compareTo
+        return 0;
     }
 
     public String getNome() {

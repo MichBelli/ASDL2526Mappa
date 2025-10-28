@@ -31,4 +31,14 @@ class FermataTest {
         Fermata f2 = new Fermata(1, "Centro");
         assertEquals(f1.hashCode(), f2.hashCode());
     }
+
+    @Test
+    void testCompareTo() {
+        Fermata f1 = new Fermata(1, "Centro");
+        Fermata f2 = new Fermata(2, "Stazione");
+        Fermata f3 = new Fermata(1, "Piazza");
+        assertTrue(f1.compareTo(f2) < 0);
+        assertTrue(f2.compareTo(f1) > 0);
+        assertEquals(0, f1.compareTo(f3));
+    }
 }

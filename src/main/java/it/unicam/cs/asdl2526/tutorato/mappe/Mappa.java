@@ -70,5 +70,31 @@ public class Mappa {
         return fastestMezzo;
     }
 
+    /**
+     * Verifica se esiste un percorso possibile tra due fermate.
+     * Un percorso è composto da al massimo due mezzi.
+     * @param partenza fermata di partenza
+     * @param arrivo fermata di arrivo
+     * @return true se esiste un percorso possibile, false altrimenti
+     */
+    public boolean percorsoPossibile(Fermata partenza, Fermata arrivo) {
+        //TODO: implementare il metodo
+        return false;
+    }
+
+    /**
+     * Calcola il percorso più veloce tra due fermate.
+     * Il percorso è al massimo costruito su due mezzi per semplicità.
+     * @param partenza partenza
+     * @param arrivo arrivo
+     * @return Ritorna il percorso più veloce tra le due fermate.
+     * @throws NullPointerException Se una delle due fermate è null.
+     * @throws IllegalArgumentException Se le due fermate sono uguali, non fanno parte della mappa oppure non esiste un tragitto possibile tra le due fermate.
+     */
+    public Percorso percorsoPiuVeloce(Fermata partenza, Fermata arrivo) {
+       //TODO: implementare il metodo
+         return null;
+    }
+
 
 }
