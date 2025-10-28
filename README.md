@@ -19,6 +19,8 @@ Il progetto segue una struttura modulare:
     - `Autobus.java`: (Implementare) Rappresenta un autobus come mezzo di trasporto.
     - `Piedi.java`: (Implementare) Rappresenta il camminare come mezzo di trasporto.
     - `Mappa.java`: (Implementare) Rappresenta la mappa della città e le sue funzionalità.
+    - `ComparabileInDistanza.java`: Interfaccia per confrontare le fermate in base alla distanza.
+    - `Percorso.java`: (Implementare) Rappresenta un percorso tra due fermate che sfrutta più mezzi di trasporto.
 
 # LineaCity Map Project ENG
 
